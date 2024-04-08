@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs662yw5j471s"
-path.s3tc="res://.godot/imported/bigcomputar_computer textures.png-382b5a171793aa369f3ffe15483860c0.s3tc.ctex"
+uid="uid://c1tjlonreqm1"
+path.s3tc="res://.godot/imported/button0_textursatone.png-26b4ba22f090f3c9ae65599cdae0d2f7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://graphics/computer/bigcomputar_computer textures.png"
-dest_files=["res://.godot/imported/bigcomputar_computer textures.png-382b5a171793aa369f3ffe15483860c0.s3tc.ctex"]
+source_file="res://graphics/button/button0_textursatone.png"
+dest_files=["res://.godot/imported/button0_textursatone.png-26b4ba22f090f3c9ae65599cdae0d2f7.s3tc.ctex"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://doqmno2oep32a"
-path="res://.godot/imported/button0.glb-9a154b73d77d8c2422498a2bfba157a0.scn"
+uid="uid://d0qetmxtc8ctu"
+path="res://.godot/imported/bigredbutton.glb-0b4970ae49560fbce53f5f3d72ea99d6.scn"
 
 [deps]
 
-source_file="res://graphics/computer/button0.glb"
-dest_files=["res://.godot/imported/button0.glb-9a154b73d77d8c2422498a2bfba157a0.scn"]
+source_file="res://graphics/button/bigredbutton.glb"
+dest_files=["res://.godot/imported/bigredbutton.glb-0b4970ae49560fbce53f5f3d72ea99d6.scn"]
 
 [params]
 

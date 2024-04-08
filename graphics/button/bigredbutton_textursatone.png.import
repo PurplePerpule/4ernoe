@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j6an2falyslp"
-path.s3tc="res://.godot/imported/button0_textursatone.png-d05d668fbf0400ab1f976ee4d9667ab9.s3tc.ctex"
+uid="uid://dglrqoee4d5k3"
+path.s3tc="res://.godot/imported/bigredbutton_textursatone.png-30d8013bdada69242f6869581f91039d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://graphics/computer/button0_textursatone.png"
-dest_files=["res://.godot/imported/button0_textursatone.png-d05d668fbf0400ab1f976ee4d9667ab9.s3tc.ctex"]
+source_file="res://graphics/button/bigredbutton_textursatone.png"
+dest_files=["res://.godot/imported/bigredbutton_textursatone.png-30d8013bdada69242f6869581f91039d.s3tc.ctex"]
 
 [params]
 

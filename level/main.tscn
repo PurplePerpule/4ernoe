@@ -1,14 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://swvl78x8eavx"]
+[gd_scene load_steps=17 format=3 uid="uid://swvl78x8eavx"]
 
 [ext_resource type="Texture2D" uid="uid://nk1qfde31s5n" path="res://graphics/texture_07.png" id="1_53m74"]
 [ext_resource type="PackedScene" uid="uid://c0rlc543u6ugo" path="res://scripts/player.tscn" id="1_ets8q"]
-[ext_resource type="PackedScene" uid="uid://cak23rcc6baq8" path="res://graphics/computer/bigcomputar.glb" id="3_r3382"]
+[ext_resource type="PackedScene" uid="uid://b13k7q7pa6uy1" path="res://graphics/computer/bigcomputar.glb" id="3_r3382"]
 [ext_resource type="PackedScene" uid="uid://fqbsc23pao2f" path="res://graphics/computer/basetable (1).glb" id="4_4skfk"]
-[ext_resource type="PackedScene" uid="uid://doqmno2oep32a" path="res://graphics/computer/button0.glb" id="6_7rtix"]
 [ext_resource type="PackedScene" uid="uid://d07q3ory20oys" path="res://graphics/smallcomputer/smalcomputer.glb" id="6_o6g0l"]
+[ext_resource type="PackedScene" uid="uid://b8qs4i0y6agbf" path="res://graphics/smallcomputer/stoykaforbuttons.glb" id="7_e8gam"]
 [ext_resource type="PackedScene" uid="uid://cgk3wpcowb6ix" path="res://scenes/stranger.tscn" id="7_ykw5j"]
+[ext_resource type="PackedScene" uid="uid://0h5flf8mgr2g" path="res://objects/bigredbutton.tscn" id="8_4mscl"]
+[ext_resource type="PackedScene" uid="uid://cph3qmvc1n06t" path="res://objects/aimbutton.tscn" id="9_sybqw"]
+[ext_resource type="PackedScene" uid="uid://bef8gaoxq1355" path="res://graphics/ship/submariner.glb" id="10_cgr3r"]
+[ext_resource type="PackedScene" uid="uid://ckntw7phu3djj" path="res://objects/button.tscn" id="10_w6so1"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_iew8u"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_vl43t"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="Environment" id="Environment_oqmkl"]
@@ -44,11 +48,11 @@ transform = Transform3D(-0.753009, -0.138159, 0.643342, -0.0413134, 0.985707, 0.
 fov = 49.5154
 
 [node name="bigcomputar" parent="SubViewport" instance=ExtResource("3_r3382")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.63909, 0.454429, 6.38505)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.78711, 0.461344, 6.3823)
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewport/bigcomputar"]
-transform = Transform3D(-0.00371744, 0, 0.299977, 0, 0.3, 0, -0.299977, 0, -0.00371744, -0.158396, 2.20801, 0.23687)
-texture = SubResource("ViewportTexture_iew8u")
+transform = Transform3D(-1.5299e-08, 0, 0.35, 0, 0.35, 0, -0.35, 0, -1.5299e-08, -0.280296, 2.21118, 0.275973)
+texture = SubResource("ViewportTexture_vl43t")
 
 [node name="утм" type="Node3D" parent="."]
 
@@ -85,18 +89,33 @@ use_collision = true
 size = Vector3(57.3347, 3.62115, 1)
 
 [node name="player" parent="." instance=ExtResource("1_ets8q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144308, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144308, 3.44731)
 
 [node name="basetable (1)" parent="." instance=ExtResource("4_4skfk")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.65498, 0.487748, 6.54214)
 
-[node name="button0" parent="." instance=ExtResource("6_7rtix")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.0332, 0.355961, 6.79129)
-
 [node name="smalcomputer" parent="." instance=ExtResource("6_o6g0l")]
-transform = Transform3D(0.763858, 0, -0.23774, 0, 0.8, 0, 0.23774, 0, 0.763858, -2.86582, 0.471773, 6.40642)
+transform = Transform3D(0.79686, 0, -0.0708096, 0, 0.8, 0, 0.0708096, 0, 0.79686, -2.727, 0.471773, 6.43927)
+
+[node name="stoykaforbuttons" parent="." instance=ExtResource("7_e8gam")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -2.90647, 0.498558, 6.42431)
 
 [node name="stranger" parent="." instance=ExtResource("7_ykw5j")]
 transform = Transform3D(0.161269, 0, -0.163989, 0, 0.23, 0, 0.163989, 0, 0.161269, -1.62013, 1.66095, 9.10147)
+
+[node name="bigredbutton" parent="." instance=ExtResource("8_4mscl")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.49109, 1.31166, 6.51247)
+
+[node name="aimbutton" parent="." instance=ExtResource("9_sybqw")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -2.69494, 1.26062, 7.05357)
+
+[node name="aimbutton2" parent="." instance=ExtResource("9_sybqw")]
+transform = Transform3D(-0.641996, 0.279001, -5.6125e-08, 0.279001, 0.641996, 2.4391e-08, 6.11959e-08, 1.20961e-15, -0.7, -2.42104, 1.20793, 7.04168)
+
+[node name="button0" parent="." instance=ExtResource("10_w6so1")]
+transform = Transform3D(0.748982, 0.039069, 0, -0.039069, 0.748982, 0, 0, 0, 0.75, -2.55812, 1.22752, 7.0444)
+
+[node name="submariner" parent="." instance=ExtResource("10_cgr3r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53547, 0.381207, -8.05892)
 
 [editable path="stranger"]
