@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://77hxd6l3gvid"
-path.s3tc="res://.godot/imported/smalcomputer_computer textures.png-110486cfc9a3b5342258a0e7cec9e6ab.s3tc.ctex"
+uid="uid://d2xo2cd4xdvyg"
+path.s3tc="res://.godot/imported/stranger_mantexture.png-8783ce20f6bd1eccb601114867877799.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://graphics/smallcomputer/smalcomputer_computer textures.png"
-dest_files=["res://.godot/imported/smalcomputer_computer textures.png-110486cfc9a3b5342258a0e7cec9e6ab.s3tc.ctex"]
+source_file="res://graphics/animation/stranger_mantexture.png"
+dest_files=["res://.godot/imported/stranger_mantexture.png-8783ce20f6bd1eccb601114867877799.s3tc.ctex"]
 
 [params]
 

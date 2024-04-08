@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d07q3ory20oys"
-path="res://.godot/imported/smalcomputer.glb-905fd2bc00e3ce09db21fe952f7d8532.scn"
+uid="uid://b7yt3diol03ts"
+path="res://.godot/imported/stranger.glb-9ba4b25a9a7d5b839534d4e2dea34745.scn"
 
 [deps]
 
-source_file="res://graphics/smallcomputer/smalcomputer.glb"
-dest_files=["res://.godot/imported/smalcomputer.glb-905fd2bc00e3ce09db21fe952f7d8532.scn"]
+source_file="res://graphics/animation/stranger.glb"
+dest_files=["res://.godot/imported/stranger.glb-9ba4b25a9a7d5b839534d4e2dea34745.scn"]
 
 [params]
 
