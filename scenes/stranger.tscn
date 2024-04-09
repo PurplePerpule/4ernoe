@@ -1,12 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgk3wpcowb6ix"]
+[gd_scene load_steps=6 format=3 uid="uid://cgk3wpcowb6ix"]
 
 [ext_resource type="PackedScene" uid="uid://b7yt3diol03ts" path="res://graphics/animation/stranger.glb" id="1_riy58"]
+[ext_resource type="Script" path="res://scripts/stranger.gd" id="2_hv6y1"]
+[ext_resource type="PackedScene" uid="uid://v58vmsqjri3s" path="res://systems/interaction/interactable.tscn" id="3_xy2af"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wdy1t"]
+size = Vector3(2.11743, 11.0623, 1.77161)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w2bqd"]
+size = Vector3(2.11743, 11.0623, 1.77161)
 
 [node name="stranger" instance=ExtResource("1_riy58")]
-transform = Transform3D(0.23, 0, 0, 0, 0.23, 0, 0, 0, 0.23, 0, 0, 0)
+script = ExtResource("2_hv6y1")
 
 [node name="Skeleton3D" parent="Armature_001" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.3254e-05, 0.134026, 0.085694)
 bones/1/rotation = Quaternion(-0.0110097, 4.64703e-05, 0.00421904, 0.999931)
 bones/2/rotation = Quaternion(0.143937, 0.0176347, 0.798617, 0.584108)
 bones/3/rotation = Quaternion(-0.00613134, -0.0251269, 0.51811, 0.854923)
@@ -21,3 +28,19 @@ bones/11/rotation = Quaternion(-0.0450134, -0.000836718, 0.00956655, 0.99894)
 bones/12/rotation = Quaternion(-3.47518e-08, -1.32098e-08, 0.999403, 0.0345533)
 bones/14/rotation = Quaternion(-1.83939e-08, -1.55319e-08, 0.999067, -0.0431856)
 bones/15/rotation = Quaternion(5.73387e-09, 5.44125e-08, -0.0200927, 0.999798)
+
+[node name="Interactable" parent="." index="2" instance=ExtResource("3_xy2af")]
+
+[node name="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2423, 0)
+shape = SubResource("BoxShape3D_wdy1t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00964355, -2.1051, 0.385803)
+shape = SubResource("BoxShape3D_w2bqd")
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+
+[editable path="Interactable"]
