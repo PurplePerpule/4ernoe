@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://swvl78x8eavx"]
+[gd_scene load_steps=32 format=3 uid="uid://swvl78x8eavx"]
 
 [ext_resource type="Texture2D" uid="uid://nk1qfde31s5n" path="res://graphics/texture_07.png" id="1_53m74"]
 [ext_resource type="PackedScene" uid="uid://c0rlc543u6ugo" path="res://scripts/player.tscn" id="1_ets8q"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://demyf8do88t45" path="res://graphics/level/perila.glb" id="15_x5cc0"]
 [ext_resource type="PackedScene" uid="uid://fcoo3x1p70xu" path="res://graphics/level/Podstavkilestnici.glb" id="16_wxolb"]
 [ext_resource type="PackedScene" uid="uid://dynx8oxml1h2c" path="res://graphics/level/BIGWall.glb" id="17_03k0n"]
+[ext_resource type="Script" path="res://scripts/MiniMapCam.gd" id="18_fm4jv"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_vl43t"]
 viewport_path = NodePath("SubViewport")
@@ -44,6 +45,32 @@ grow_amount = 9.143
 material = SubResource("StandardMaterial3D_ueyxi")
 size = Vector3(60, 2, 60)
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_d17hf"]
+height = 0.001
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unx6d"]
+shading_mode = 0
+albedo_color = Color(0, 0.45098, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_b8ejk"]
+size = Vector2(0.8, 0.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4ewk"]
+shading_mode = 0
+albedo_color = Color(0, 0.45098, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_guwng"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m8flo"]
+shading_mode = 0
+albedo_color = Color(0, 0.45098, 0, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_inc1n"]
+viewport_path = NodePath("MiniMapViewport")
+
+[sub_resource type="Environment" id="Environment_jwt37"]
+background_mode = 1
+
 [node name="main" type="Node"]
 
 [node name="SubViewport" type="SubViewport" parent="."]
@@ -51,6 +78,7 @@ size = Vector2i(640, 512)
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport"]
 transform = Transform3D(-0.422748, -0.328895, 0.84446, -0.0217609, 0.935236, 0.353356, -0.905986, 0.131004, -0.402526, 4.95067, 4.35793, -10.671)
+cull_mask = 1
 fov = 49.5154
 
 [node name="bigcomputar" parent="SubViewport" instance=ExtResource("3_r3382")]
@@ -77,6 +105,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0467529, -0.251709, -0.174
 shape = SubResource("BoxShape3D_7prnt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0228158, 0)
 mesh = SubResource("BoxMesh_v6pdt")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="ground"]
@@ -97,11 +126,33 @@ size = Vector3(57.3347, 3.62115, 1)
 [node name="player" parent="." instance=ExtResource("1_ets8q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144308, 3.44731)
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.126053)
+layers = 524288
+mesh = SubResource("CylinderMesh_d17hf")
+surface_material_override/0 = SubResource("StandardMaterial3D_unx6d")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="player"]
+transform = Transform3D(0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, -0.707107, -3.09086e-08, 0, 0, -0.344815)
+layers = 524288
+mesh = SubResource("QuadMesh_b8ejk")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4ewk")
+
 [node name="basetable (1)" parent="." instance=ExtResource("4_4skfk")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.65498, 0.487748, 6.54214)
 
 [node name="smalcomputer" parent="." instance=ExtResource("6_o6g0l")]
 transform = Transform3D(0.79686, 0, -0.0708096, 0, 0.8, 0, 0.0708096, 0, 0.79686, -2.727, 0.471773, 6.43927)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="smalcomputer"]
+transform = Transform3D(0.992165, -0.088512, -0.0881646, 0.088512, -4.37114e-08, 0.996075, -0.0881646, -0.996075, 0.00783433, 0, 0, 0)
+layers = 524288
+mesh = SubResource("QuadMesh_guwng")
+surface_material_override/0 = SubResource("StandardMaterial3D_m8flo")
+
+[node name="Sprite3D" type="Sprite3D" parent="smalcomputer"]
+transform = Transform3D(0.438367, 0, 0.898787, 0, 0.999992, 0, -0.898787, 0, 0.438367, 0.341489, 1.59028, -1.33045)
+texture = SubResource("ViewportTexture_inc1n")
 
 [node name="stoykaforbuttons" parent="." instance=ExtResource("7_e8gam")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -2.90647, 0.498558, 6.42431)
@@ -109,11 +160,24 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -2.90647, 0.498558, 
 [node name="stranger" parent="." instance=ExtResource("7_ykw5j")]
 transform = Transform3D(0.161269, 0, -0.163989, 0, 0.23, 0, 0.163989, 0, 0.161269, -1.62013, 1.66095, 9.10147)
 
+[node name="Skeleton3D" parent="stranger/Armature_001" index="0"]
+bones/1/rotation = Quaternion(2.2737e-08, 1.64641e-08, 0.0042193, 0.999991)
+bones/2/rotation = Quaternion(-6.32821e-08, 8.97365e-09, 0.822569, 0.568665)
+bones/3/rotation = Quaternion(2.2047e-08, -5.69283e-09, -0.0129503, 0.999916)
+bones/4/rotation = Quaternion(-1.69675e-10, -2.58125e-08, 0.00760033, 0.999971)
+bones/5/rotation = Quaternion(-8.02945e-08, -1.74278e-07, -0.127745, 0.991807)
+bones/6/rotation = Quaternion(1.81215e-08, 8.30615e-09, -0.829879, 0.557944)
+bones/7/rotation = Quaternion(2.03586e-08, -6.34465e-08, 0.0283937, 0.999597)
+bones/8/rotation = Quaternion(8.39348e-10, 1.34518e-07, -0.0107637, 0.999942)
+bones/9/rotation = Quaternion(-8.28383e-08, 3.92713e-08, 0.096304, 0.995352)
+bones/10/rotation = Quaternion(-2.2849e-08, -3.56944e-08, -0.0182991, 0.999833)
+bones/11/rotation = Quaternion(7.47776e-10, -4.0255e-08, 0.00957626, 0.999954)
+
 [node name="bigredbutton" parent="." instance=ExtResource("8_4mscl")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.49109, 1.31166, 6.51247)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="bigredbutton"]
-transform = Transform3D(-0.571713, -0.446465, 1.01799, -0.105695, 1.16139, 0.449996, -1.10656, 0.119737, -0.568938, 8.70434, 3.85585, -21.8296)
+transform = Transform3D(-0.571713, -0.446466, 1.01799, -0.105695, 1.16139, 0.449997, -1.10656, 0.119738, -0.568937, 8.70434, 3.81514, -21.8296)
 visible = false
 light_energy = 16.0
 light_indirect_energy = 16.0
@@ -163,4 +227,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.6693, 3.57498, -43.2856)
 [node name="BIGWall3" parent="." instance=ExtResource("17_03k0n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.5315, 2.98725, -43.2856)
 
+[node name="MiniMapViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+size = Vector2i(79, 60)
+render_target_update_mode = 4
+
+[node name="MiniMapCam" type="Camera3D" parent="MiniMapViewport"]
+transform = Transform3D(1.31134e-07, -1, -5.96046e-08, 0, -5.96046e-08, 1, -1, -1.31134e-07, -7.8162e-15, 0, 32.2737, 0)
+cull_mask = 524288
+environment = SubResource("Environment_jwt37")
+projection = 1
+size = 12.0
+script = ExtResource("18_fm4jv")
+
 [editable path="stranger"]
+[editable path="stranger/Interactable"]
