@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://c54gldiih8a1v"]
+
+[ext_resource type="PackedScene" uid="uid://cgm4pkntrn0ab" path="res://graphics/lights/yellowlight.glb" id="1_q7ajc"]
+
+[node name="whitelight" instance=ExtResource("1_q7ajc")]
+
+[node name="Cube_010#OmniLight3D" type="OmniLight3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.328354, 0)
+light_energy = 16.0
+light_size = 0.494
+light_specular = 7.126
+distance_fade_begin = 784.73
+omni_range = 3.14744
+
+[node name="Cube_012" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

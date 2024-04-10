@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhnihmcpa5ddc"]
+
+[ext_resource type="PackedScene" uid="uid://b2ckd8cd8kr7h" path="res://graphics/submarine/lukeforsubmarine.glb" id="1_e1jjs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eewjx"]
+size = Vector3(2.67725, 0.142151, 3.08154)
+
+[node name="lukeforsubmarine" instance=ExtResource("1_e1jjs")]
+
+[node name="skeletforluke" parent="." index="0"]
+transform = Transform3D(-0.00908963, 0.999959, 0, -0.999959, -0.00908963, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="skeletforluke" index="0"]
+bones/1/rotation = Quaternion(4.89284e-08, -1.25999e-07, 0.392705, 0.919665)
+bones/2/rotation = Quaternion(0.506843, 0.553242, -0.437634, 0.495489)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="skeletforluke/Skeleton3D/Cube_009" index="0"]
+transform = Transform3D(-0.00908962, -0.999958, 0, 0.999958, -0.00908962, 0, 0, 0, 1, 0.110856, 0.0994876, 0.0532497)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="skeletforluke/Skeleton3D/Cube_009/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226807, 0.356969, -0.0673585)
+shape = SubResource("BoxShape3D_eewjx")

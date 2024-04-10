@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://x2puvd2g2u8q"]
+
+[ext_resource type="PackedScene" uid="uid://bnjuf6ft2godo" path="res://graphics/items/redcup.glb" id="1_wka80"]
+
+[node name="redcup" instance=ExtResource("1_wka80")]
+
+[node name="Cube" parent="." index="0"]
+transform = Transform3D(-0.138689, 0, 0.078366, 0, 0.159298, 0, -0.078366, 0, -0.138689, 0, 0, 0)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7gg1t38u8yel"]
+
+[ext_resource type="PackedScene" uid="uid://bw3ox4mhfhun1" path="res://graphics/ship/coffeEngine.glb" id="1_c5tif"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n43k8"]
+size = Vector3(1.03027, 1.31653, 1.87144)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ogej"]
+size = Vector3(1.03027, 0.60733, 2.22771)
+
+[node name="coffeEngine" instance=ExtResource("1_c5tif")]
+
+[node name="motor" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="motor" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="motor/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.505894, -0.89169, 0.0637283)
+shape = SubResource("BoxShape3D_n43k8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="motor/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036705, -0.793103, 2.12671)
+shape = SubResource("BoxShape3D_1ogej")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="motor/StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036705, -0.862424, -1.43885)
+shape = SubResource("BoxShape3D_1ogej")

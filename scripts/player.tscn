@@ -1,12 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0rlc543u6ugo"]
+[gd_scene load_steps=5 format=3 uid="uid://c0rlc543u6ugo"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fqrvb"]
 [ext_resource type="PackedScene" uid="uid://cvgb6eu84xnqu" path="res://scenes/player_interactor.tscn" id="2_fj8y7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vw0ya"]
+radius = 0.34273
 height = 2.71347
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_xjtrv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jryq"]
 size = Vector3(0.01, 0.01, 1.72311)
@@ -18,11 +17,6 @@ script = ExtResource("1_fqrvb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01273, 0)
 shape = SubResource("CapsuleShape3D_vw0ya")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00658417, 0.8647, -0.0144534)
-cast_shadow = 0
-mesh = SubResource("CapsuleMesh_xjtrv")
 
 [node name="head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

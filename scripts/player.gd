@@ -8,7 +8,7 @@ var walk = false
 var crouch = false
 
 var current_speed = 5.0
-const walk_speed = 5.0
+const walk_speed = 4.0
 const crouch_speed = 2.0
 
 var crouching_depth = -0.5

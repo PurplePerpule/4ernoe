@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://co7cwrwn2w8ns"]
+
+[ext_resource type="PackedScene" uid="uid://cgm4pkntrn0ab" path="res://graphics/lights/yellowlight.glb" id="1_taw0y"]
+
+[node name="yellowlight" instance=ExtResource("1_taw0y")]
+
+[node name="Cube_012" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

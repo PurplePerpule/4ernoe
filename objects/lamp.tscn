@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg0k3qr3vnu4c"]
+
+[ext_resource type="PackedScene" uid="uid://dkbbj0yjcatel" path="res://graphics/items/lamp.glb" id="1_re65t"]
+[ext_resource type="Script" path="res://scripts/lamp.gd" id="2_usoih"]
+[ext_resource type="PackedScene" uid="uid://v58vmsqjri3s" path="res://systems/interaction/interactable.tscn" id="3_cj3k5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hgjkv"]
+size = Vector3(0.428101, 0.0582275, 0.4245)
+
+[node name="lamp" instance=ExtResource("1_re65t")]
+script = ExtResource("2_usoih")
+
+[node name="Cube_003" parent="." index="0"]
+transform = Transform3D(0.121101, 0, 0, 0, 0.121101, 0, 0, 0, 0.121101, 0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Cube_003" index="0"]
+transform = Transform3D(8.25757, 0, 0, 0, 8.25757, 0, 0, 0, 8.25757, 3.05386, 6.94564, -2.214)
+light_color = Color(0.909804, 0.921569, 0.407843, 1)
+light_energy = 0.838
+omni_range = 1.46484
+
+[node name="Interactable" parent="." index="1" instance=ExtResource("3_cj3k5")]
+
+[node name="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00567627, -0.0686646, -0.00198364)
+shape = SubResource("BoxShape3D_hgjkv")
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+
+[editable path="Interactable"]

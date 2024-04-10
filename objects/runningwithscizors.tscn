@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5yu4r5uxx4xl"]
+
+[ext_resource type="PackedScene" uid="uid://c2wig8dnfjy2s" path="res://graphics/items/runningwithscizors.glb" id="1_mabof"]
+
+[node name="runningwithscizors" instance=ExtResource("1_mabof")]
+
+[node name="Cube_001" parent="." index="0"]
+transform = Transform3D(0.0805232, 0, 0.0333151, 0, 0.0871429, 0, -0.0333151, 0, 0.0805232, 0, 0, 0)
