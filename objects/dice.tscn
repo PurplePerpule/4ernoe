@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3d0ny0o8vm0b"]
+
+[ext_resource type="PackedScene" uid="uid://df6pjhrs1oo1n" path="res://graphics/items/dice.glb" id="1_pilb5"]
+
+[node name="dice" instance=ExtResource("1_pilb5")]
+
+[node name="dies_001" parent="." index="0"]
+transform = Transform3D(0.0319223, 0, 0, 0, 0.0319223, 0, 0, 0, 0.0319223, 0, 0, 0)

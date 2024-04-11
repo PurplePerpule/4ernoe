@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://c05u5dtnph56n"]
+
+[ext_resource type="PackedScene" uid="uid://1x1rs6rc6tlu" path="res://graphics/button/aimbutton.glb" id="1_e7c8r"]
+[ext_resource type="Script" path="res://aimbutton.gd" id="2_fmqqi"]
+[ext_resource type="PackedScene" uid="uid://v58vmsqjri3s" path="res://systems/interaction/interactable.tscn" id="3_laub5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_im5h6"]
+size = Vector3(0.135559, 0.151123, 0.218323)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mft1u"]
+size = Vector3(0.135559, 0.151123, 0.218323)
+
+[sub_resource type="Animation" id="Animation_71pb3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_007:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wngvj"]
+resource_name = "click"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_007:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.05, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rm1i0"]
+_data = {
+"RESET": SubResource("Animation_71pb3"),
+"click": SubResource("Animation_wngvj")
+}
+
+[node name="aimbutton" instance=ExtResource("1_e7c8r")]
+script = ExtResource("2_fmqqi")
+
+[node name="Cube_007" parent="." index="0"]
+transform = Transform3D(0.0656609, 0.0102541, 0, -0.0102541, 0.0656609, 0, 0, 0, 0.0664568, 0, 0, 0)
+
+[node name="Interactable" parent="." index="1" instance=ExtResource("3_laub5")]
+
+[node name="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00436401, -0.00598145, -0.00259399)
+shape = SubResource("BoxShape3D_im5h6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00436401, -0.00598145, -0.00259399)
+shape = SubResource("BoxShape3D_mft1u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_rm1i0")
+}
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+
+[editable path="Interactable"]

@@ -8,7 +8,7 @@ var walk = false
 var crouch = false
 
 var current_speed = 5.0
-const walk_speed = 5.0
+const walk_speed = 4.0
 const crouch_speed = 2.0
 
 var crouching_depth = -0.5
@@ -46,6 +46,7 @@ func _physics_process(delta):
 	
 	var input_dir = Input.get_vector("left", "right", "forward", "back")
 	
+
 	#head bobbing
 	
 	if walk: 
@@ -64,6 +65,7 @@ func _physics_process(delta):
 	else:
 		eyes.position.y = lerp(eyes.position.y, 0.0, delta*lerp_speed)
 		eyes.position.x = lerp(eyes.position.x, 0.0, delta*lerp_speed)
+	
 		
 		#gravity
 	if not is_on_floor():
@@ -73,7 +75,7 @@ func _physics_process(delta):
 		crouch = true
 		walk = false
 		current_speed = crouch_speed
-		head.position.y = lerp(head.position.y , 1.8 + crouching_depth, delta * lerp_speed)
+		head.position.y = lerp(head.position.y, 1.8 + crouching_depth, delta * lerp_speed)
 	else:
 		head.position.y = lerp( head.position.y, 1.8, delta * lerp_speed)
 		current_speed = walk_speed
@@ -83,6 +85,7 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	direction = lerp(direction,(transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta*lerp_speed)
 	if direction:
+		
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
 	else:

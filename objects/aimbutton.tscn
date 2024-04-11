@@ -1,14 +1,68 @@
-[gd_scene load_steps=9 format=3 uid="uid://cph3qmvc1n06t"]
+[gd_scene load_steps=13 format=3 uid="uid://cph3qmvc1n06t"]
 
-[ext_resource type="PackedScene" uid="uid://1x1rs6rc6tlu" path="res://graphics/button/aimbutton.glb" id="1_lf8bg"]
 [ext_resource type="Script" path="res://aimbutton.gd" id="2_o01fk"]
+[ext_resource type="Texture2D" uid="uid://bpsvgeqj5s8l" path="res://graphics/button/aimbutton_textursatone.png" id="2_p056k"]
 [ext_resource type="PackedScene" uid="uid://v58vmsqjri3s" path="res://systems/interaction/interactable.tscn" id="3_cayt5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo7ic"]
+resource_name = "Material.002"
+cull_mode = 2
+albedo_texture = ExtResource("2_p056k")
+roughness = 0.5
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vt6ek"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1.56973, 2, 2, 3.13945),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0, 2, 0, 7, 0, 3, 0, 2, 0, 6, 0, 7, 0, 6, 0, 5, 0, 7, 0, 6, 0, 4, 0, 5, 0, 4, 0, 1, 0, 5, 0, 4, 0, 0, 0, 1, 0, 2, 0, 4, 0, 6, 0, 2, 0, 0, 0, 4, 0, 7, 0, 1, 0, 3, 0, 7, 0, 5, 0, 1, 0),
+"name": "Material.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 153, 150, 0, 0, 0, 0, 255, 255, 153, 150, 0, 0, 0, 0, 0, 0, 101, 105, 0, 0, 0, 0, 255, 255, 101, 105, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ev8kc"]
+resource_name = "aimbutton_Cube_011"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1.56973, 2, 2, 3.13945),
+"attribute_data": PackedByteArray(161, 28, 73, 165, 40, 31, 194, 162, 40, 31, 223, 172, 54, 36, 73, 165, 175, 33, 194, 162, 175, 33, 223, 172, 161, 28, 208, 167, 40, 31, 88, 170, 40, 31, 88, 170, 54, 36, 208, 167, 175, 33, 88, 170, 175, 33, 88, 170, 40, 31, 73, 165, 40, 31, 73, 165, 40, 31, 73, 165, 175, 33, 73, 165, 175, 33, 73, 165, 175, 33, 73, 165, 40, 31, 208, 167, 40, 31, 208, 167, 40, 31, 208, 167, 175, 33, 208, 167, 175, 33, 208, 167, 175, 33, 208, 167),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray(2, 0, 11, 0, 5, 0, 2, 0, 8, 0, 11, 0, 7, 0, 23, 0, 10, 0, 7, 0, 20, 0, 23, 0, 19, 0, 16, 0, 22, 0, 19, 0, 13, 0, 16, 0, 14, 0, 4, 0, 17, 0, 14, 0, 1, 0, 4, 0, 6, 0, 12, 0, 18, 0, 6, 0, 0, 0, 12, 0, 21, 0, 3, 0, 9, 0, 21, 0, 15, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_eo7ic"),
+"name": "Material.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 153, 150, 67, 195, 0, 0, 0, 0, 153, 150, 67, 195, 0, 0, 0, 0, 153, 150, 84, 213, 0, 0, 255, 255, 153, 150, 189, 251, 0, 0, 255, 255, 153, 150, 67, 195, 0, 0, 255, 255, 153, 150, 84, 213, 0, 0, 0, 0, 101, 105, 56, 192, 0, 0, 0, 0, 101, 105, 148, 239, 0, 0, 0, 0, 101, 105, 84, 213, 0, 0, 255, 255, 101, 105, 148, 239, 0, 0, 255, 255, 101, 105, 148, 239, 0, 0, 255, 255, 101, 105, 84, 213, 255, 255, 0, 0, 255, 255, 156, 193, 255, 255, 0, 0, 255, 255, 84, 213, 255, 255, 0, 0, 255, 255, 67, 195, 255, 255, 255, 255, 255, 255, 148, 239, 255, 255, 255, 255, 255, 255, 84, 213, 255, 255, 255, 255, 255, 255, 67, 195, 255, 255, 0, 0, 0, 0, 67, 195, 255, 255, 0, 0, 0, 0, 84, 213, 255, 255, 0, 0, 0, 0, 148, 239, 255, 255, 255, 255, 0, 0, 126, 244, 255, 255, 255, 255, 0, 0, 84, 213, 255, 255, 255, 255, 0, 0, 148, 239, 191, 23, 126, 175, 63, 232, 63, 232, 84, 213, 84, 213, 72, 194, 145, 4, 63, 232, 63, 232, 84, 213, 84, 213, 131, 16, 189, 119, 57, 200, 57, 200, 84, 213, 84, 213, 115, 144, 197, 183, 57, 200, 57, 200, 84, 213, 84, 213, 246, 36, 132, 109, 170, 42, 170, 42, 63, 232, 63, 232, 57, 200, 116, 16, 170, 42, 170, 42, 63, 232, 63, 232, 127, 47, 63, 104, 170, 42, 170, 42, 57, 200, 57, 200, 228, 197, 203, 11, 170, 42, 170, 42, 57, 200, 57, 200)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_vt6ek")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_im5h6"]
 size = Vector3(0.135559, 0.151123, 0.218323)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mft1u"]
 size = Vector3(0.135559, 0.151123, 0.218323)
+
+[sub_resource type="Animation" id="Animation_71pb3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube_007:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_wngvj"]
 resource_name = "click"
@@ -26,49 +80,42 @@ tracks/0/keys = {
 "values": [Vector3(0, -0.05, 0), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_71pb3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Cube_007:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rm1i0"]
 _data = {
 "RESET": SubResource("Animation_71pb3"),
 "click": SubResource("Animation_wngvj")
 }
 
-[node name="aimbutton" instance=ExtResource("1_lf8bg")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_67j0p"]
+size = Vector3(0.135559, 0.151123, 0.218323)
+
+[node name="aimbutton" type="Node3D"]
 script = ExtResource("2_o01fk")
 
-[node name="Cube_007" parent="." index="0"]
+[node name="Cube_007" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0656609, 0.0102541, 0, -0.0102541, 0.0656609, 0, 0, 0, 0.0664568, 0, 0, 0)
+mesh = SubResource("ArrayMesh_ev8kc")
+skeleton = NodePath("")
 
-[node name="Interactable" parent="." index="1" instance=ExtResource("3_cayt5")]
+[node name="Interactable" parent="." instance=ExtResource("3_cayt5")]
 
 [node name="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00436401, -0.00598145, -0.00259399)
 shape = SubResource("BoxShape3D_im5h6")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00436401, -0.00598145, -0.00259399)
 shape = SubResource("BoxShape3D_mft1u")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_rm1i0")
 }
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_67j0p")
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
 

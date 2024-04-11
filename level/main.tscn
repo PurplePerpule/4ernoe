@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://demyf8do88t45" path="res://graphics/level/perila.glb" id="15_x5cc0"]
 [ext_resource type="PackedScene" uid="uid://fcoo3x1p70xu" path="res://graphics/level/Podstavkilestnici.glb" id="16_wxolb"]
 [ext_resource type="PackedScene" uid="uid://dynx8oxml1h2c" path="res://graphics/level/BIGWall.glb" id="17_03k0n"]
-[ext_resource type="Script" path="res://scripts/MiniMapCam.gd" id="18_fm4jv"]
+[ext_resource type="Script" path="res://MiniMapCamDuub.gd" id="18_m3a8l"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_vl43t"]
 viewport_path = NodePath("SubViewport")
@@ -133,7 +133,7 @@ mesh = SubResource("CylinderMesh_d17hf")
 surface_material_override/0 = SubResource("StandardMaterial3D_unx6d")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="player"]
-transform = Transform3D(0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, -0.707107, -3.09086e-08, 0, 0, -0.344815)
+transform = Transform3D(0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, -0.707107, -3.09086e-08, 0, 0, -0.564149)
 layers = 524288
 mesh = SubResource("QuadMesh_b8ejk")
 surface_material_override/0 = SubResource("StandardMaterial3D_v4ewk")
@@ -238,7 +238,7 @@ cull_mask = 524288
 environment = SubResource("Environment_jwt37")
 projection = 1
 size = 12.0
-script = ExtResource("18_fm4jv")
+script = ExtResource("18_m3a8l")
 
 [editable path="stranger"]
 [editable path="stranger/Interactable"]

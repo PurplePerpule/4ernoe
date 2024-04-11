@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8nyugwbxu3yk"]
+
+[ext_resource type="PackedScene" uid="uid://dy2lyatcunxl2" path="res://graphics/level/doorlift.glb" id="1_pceft"]
+
+[node name="doorlift" instance=ExtResource("1_pceft")]
+
+[node name="Cube_008" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0146365, 0, 0.0054431)

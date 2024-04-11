@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://becdango7b72d"]
+
+[ext_resource type="PackedScene" uid="uid://cxp6pf5q5r2hk" path="res://graphics/lights/redlight.glb" id="1_o5sul"]
+[ext_resource type="Script" path="res://scripts/redlight.gd" id="2_d1jiu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kvy53"]
+size = Vector3(0.305725, 0.411865, 0.271973)
+
+[sub_resource type="Animation" id="Animation_f4bmt"]
+resource_name = "red"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_ucaui"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b8vig"]
+_data = {
+"RESET": SubResource("Animation_ucaui"),
+"red": SubResource("Animation_f4bmt")
+}
+
+[node name="redlight" instance=ExtResource("1_o5sul")]
+script = ExtResource("2_d1jiu")
+
+[node name="Cube_011" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_011" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_011/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00369757, 0.00720215, 0.00532994)
+shape = SubResource("BoxShape3D_kvy53")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Cube_011/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.321809, 0)
+light_color = Color(0.894118, 0.14902, 0, 1)
+light_energy = 8.566
+light_size = 0.566
+omni_range = 2.90831
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cube_011" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_b8vig")
+}
