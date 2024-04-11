@@ -1,13 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://cph3qmvc1n06t"]
+[gd_scene load_steps=13 format=3 uid="uid://cv53ekhfrwmgk"]
 
-[ext_resource type="Script" path="res://aimbutton.gd" id="2_o01fk"]
-[ext_resource type="Texture2D" uid="uid://bpsvgeqj5s8l" path="res://graphics/button/aimbutton_textursatone.png" id="2_p056k"]
-[ext_resource type="PackedScene" uid="uid://v58vmsqjri3s" path="res://systems/interaction/interactable.tscn" id="3_cayt5"]
+[ext_resource type="Script" path="res://scripts/click.gd" id="1_hbafg"]
+[ext_resource type="Texture2D" uid="uid://bpsvgeqj5s8l" path="res://graphics/button/aimbutton_textursatone.png" id="2_lffet"]
+[ext_resource type="PackedScene" uid="uid://v58vmsqjri3s" path="res://systems/interaction/interactable.tscn" id="3_h1up0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo7ic"]
 resource_name = "Material.002"
 cull_mode = 2
-albedo_texture = ExtResource("2_p056k")
+albedo_texture = ExtResource("2_lffet")
 roughness = 0.5
 texture_filter = 2
 
@@ -90,14 +90,14 @@ _data = {
 size = Vector3(0.135559, 0.151123, 0.218323)
 
 [node name="aimbutton" type="Node3D"]
-script = ExtResource("2_o01fk")
+script = ExtResource("1_hbafg")
 
 [node name="Cube_007" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0656609, 0.0102541, 0, -0.0102541, 0.0656609, 0, 0, 0, 0.0664568, 0, 0, 0)
 mesh = SubResource("ArrayMesh_ev8kc")
 skeleton = NodePath("")
 
-[node name="Interactable" parent="." instance=ExtResource("3_cayt5")]
+[node name="Interactable" parent="." instance=ExtResource("3_h1up0")]
 
 [node name="CollisionShape3D" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00436401, -0.00598145, -0.00259399)

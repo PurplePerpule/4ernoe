@@ -1,0 +1,195 @@
+[gd_scene load_steps=25 format=3 uid="uid://mkiwd6d0oa24"]
+
+[ext_resource type="PackedScene" uid="uid://b4yfc2qw7l8sb" path="res://scenes/submarine.tscn" id="1_6a36v"]
+[ext_resource type="PackedScene" uid="uid://dhnihmcpa5ddc" path="res://scenes/lukeforsubmarine.tscn" id="2_olonf"]
+[ext_resource type="PackedScene" uid="uid://dt35fgjw5hxjh" path="res://objects/basetable.tscn" id="3_1e7ra"]
+[ext_resource type="PackedScene" uid="uid://b8qs4i0y6agbf" path="res://graphics/smallcomputer/stoykaforbuttons.glb" id="4_wdttg"]
+[ext_resource type="PackedScene" uid="uid://b13k7q7pa6uy1" path="res://graphics/computer/bigcomputar.glb" id="5_3wlb0"]
+[ext_resource type="PackedScene" uid="uid://d07q3ory20oys" path="res://graphics/smallcomputer/smalcomputer.glb" id="6_fymer"]
+[ext_resource type="Script" path="res://scripts/MiniMapCam.gd" id="7_hyoui"]
+[ext_resource type="PackedScene" uid="uid://x2puvd2g2u8q" path="res://objects/redcup.tscn" id="8_3wrq6"]
+[ext_resource type="PackedScene" uid="uid://d3d0ny0o8vm0b" path="res://objects/dice.tscn" id="9_0eoli"]
+[ext_resource type="PackedScene" uid="uid://cg0k3qr3vnu4c" path="res://objects/lamp.tscn" id="10_6h76h"]
+[ext_resource type="PackedScene" uid="uid://c5yu4r5uxx4xl" path="res://objects/runningwithscizors.tscn" id="11_3cjdf"]
+[ext_resource type="PackedScene" uid="uid://bc647k2owceio" path="res://objects/clocks.tscn" id="12_r14d1"]
+[ext_resource type="PackedScene" uid="uid://c7gg1t38u8yel" path="res://scenes/coffe_engine.tscn" id="13_ag7sh"]
+[ext_resource type="PackedScene" uid="uid://cph3qmvc1n06t" path="res://objects/aimbutton.tscn" id="14_pqebe"]
+[ext_resource type="PackedScene" uid="uid://0h5flf8mgr2g" path="res://objects/bigredbutton.tscn" id="15_wnxk7"]
+[ext_resource type="PackedScene" uid="uid://ckntw7phu3djj" path="res://objects/button.tscn" id="16_1gbyu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4dyke"]
+size = Vector3(0.211182, 3.21049, 3.15768)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fg84h"]
+size = Vector3(0.211182, 3.21049, 2.84777)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cxt6y"]
+size = Vector3(0.211182, 3.21049, 1.66899)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mps2h"]
+viewport_path = NodePath("submarine/interer/SubViewport")
+
+[sub_resource type="QuadMesh" id="QuadMesh_s2f1v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_srvbg"]
+shading_mode = 0
+albedo_color = Color(0, 0.45098, 0, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_iipgd"]
+viewport_path = NodePath("submarine/interer/MiniMapViewport")
+
+[sub_resource type="Environment" id="Environment_ps7lh"]
+background_mode = 1
+
+[node name="submarine" type="Node3D"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -8.8096, 33.5605, -20.8118)
+
+[node name="submarine" parent="." instance=ExtResource("1_6a36v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8523, -26.8027, 49.4993)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.8571, -19.5021, 49.3514)
+shape = SubResource("BoxShape3D_4dyke")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.2304, -19.5021, 49.3514)
+shape = SubResource("BoxShape3D_4dyke")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -45.544, -19.5021, 50.8515)
+shape = SubResource("BoxShape3D_fg84h")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.834848, 0, 0.550481, 0, 1, 0, -0.550481, 0, 0.834848, -47.3155, -19.8001, 47.1897)
+shape = SubResource("BoxShape3D_cxt6y")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.687087, 0, 0.726575, 0, 1, 0, -0.726575, 0, -0.687087, -43.7045, -19.8001, 47.2667)
+shape = SubResource("BoxShape3D_cxt6y")
+
+[node name="lukeforsubmarine" parent="." instance=ExtResource("2_olonf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.7608, -20.7905, 49.5468)
+
+[node name="Skeleton3D" parent="lukeforsubmarine/skeletforluke" index="0"]
+bones/1/rotation = Quaternion(1.40631e-07, 2.97575e-10, 0.998834, 0.0482687)
+bones/2/rotation = Quaternion(-1.13268e-07, -1.78432e-08, -0.661993, 0.74951)
+
+[node name="interer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 61.1669, 0)
+
+[node name="basetable (1)" parent="interer" instance=ExtResource("3_1e7ra")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -50.5845, -86.6146, 49.5238)
+
+[node name="stoykaforbuttons" parent="interer" instance=ExtResource("4_wdttg")]
+transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, -50.8136, -86.716, 49.2659)
+
+[node name="SubViewport" type="SubViewport" parent="interer"]
+size = Vector2i(640, 512)
+
+[node name="Camera3D" type="Camera3D" parent="interer/SubViewport"]
+transform = Transform3D(-0.422748, -0.328895, 0.84446, -0.0217609, 0.935236, 0.353356, -0.905986, 0.131004, -0.402526, -45.779, 18.6143, 11.8614)
+cull_mask = 1
+fov = 74.6642
+
+[node name="bigcomputar" parent="interer/SubViewport" instance=ExtResource("5_3wlb0")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -44.379, 15.4718, 13.6327)
+
+[node name="Sprite3D" type="Sprite3D" parent="interer/SubViewport/bigcomputar"]
+transform = Transform3D(-1.42062e-08, 0, 0.325, 0, 0.325, 0, -0.325, 0, -1.42062e-08, -0.280293, 2.19896, 0.290634)
+texture = SubResource("ViewportTexture_mps2h")
+
+[node name="smalcomputer" parent="interer" instance=ExtResource("6_fymer")]
+transform = Transform3D(0.866585, 0, -0.0770055, 0, 0.87, 0, 0.0770055, 0, 0.866585, -50.8059, -86.7117, 49.0576)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="interer/smalcomputer"]
+transform = Transform3D(0.992165, -0.088512, -0.0881646, 0.088512, -4.37114e-08, 0.996075, -0.0881646, -0.996075, 0.00783433, 0, 0, 0)
+layers = 524288
+mesh = SubResource("QuadMesh_s2f1v")
+surface_material_override/0 = SubResource("StandardMaterial3D_srvbg")
+
+[node name="Sprite3D" type="Sprite3D" parent="interer/smalcomputer"]
+transform = Transform3D(0.438367, 0, 0.898787, 0, 0.999992, 0, -0.898787, 0, 0.438367, 0.341489, 1.59028, -1.33045)
+texture = SubResource("ViewportTexture_iipgd")
+
+[node name="MiniMapViewport" type="SubViewport" parent="interer"]
+handle_input_locally = false
+size = Vector2i(79, 60)
+render_target_update_mode = 4
+
+[node name="MiniMapCam" type="Camera3D" parent="interer/MiniMapViewport"]
+transform = Transform3D(1.31134e-07, -1, -5.96046e-08, 0, -5.96046e-08, 1, -1, -1.31134e-07, -7.81619e-15, -40.3397, 57.4975, 13.7827)
+cull_mask = 524288
+environment = SubResource("Environment_ps7lh")
+projection = 1
+size = 12.0
+script = ExtResource("7_hyoui")
+
+[node name="redcup" parent="interer" instance=ExtResource("8_3wrq6")]
+transform = Transform3D(0.972084, 0, -0.234633, 0, 1, 0, 0.234633, 0, 0.972084, -50.2322, -85.8934, 47.2048)
+
+[node name="dice" parent="interer" instance=ExtResource("9_0eoli")]
+transform = Transform3D(0.760372, 0, 0.649488, 0, 1, 0, -0.649488, 0, 0.760372, -50.1325, -86.0193, 47.4997)
+
+[node name="dice2" parent="interer" instance=ExtResource("9_0eoli")]
+transform = Transform3D(0.977497, 0, 0.21095, 0, 1, 0, -0.21095, 0, 0.977497, -50.1615, -86.0193, 47.4184)
+
+[node name="dice3" parent="interer" instance=ExtResource("9_0eoli")]
+transform = Transform3D(0.967184, 0, -0.254079, 0, 1, 0, 0.254079, 0, 0.967184, -50.1469, -85.9541, 47.4593)
+
+[node name="lamp" parent="interer" instance=ExtResource("10_6h76h")]
+transform = Transform3D(0.947802, 0.0033644, 0.318841, -0.00565288, 0.999964, 0.00625239, -0.318809, -0.00772841, 0.947788, -50.8059, -85.9419, 51.4146)
+
+[node name="OmniLight3D" parent="interer/lamp/Cube_003" index="0"]
+visible = false
+light_size = 0.101
+shadow_enabled = true
+shadow_bias = 0.05
+shadow_normal_bias = 0.0
+shadow_opacity = 0.83
+shadow_blur = 0.404
+omni_range = 0.968914
+
+[node name="runningwithscizors" parent="interer" instance=ExtResource("11_3cjdf")]
+transform = Transform3D(0.955707, 0.0436891, 0.291058, -0.048484, 0.998781, 0.00927874, -0.290298, -0.0229795, 0.95666, -50.4186, -86.0278, 50.6623)
+
+[node name="clocks" parent="interer" instance=ExtResource("12_r14d1")]
+transform = Transform3D(0.850389, 0, 0.526155, 0, 1, 0, -0.526155, 0, 0.850389, -50.0737, -86.0184, 51.8216)
+
+[node name="coffeEngine" parent="." instance=ExtResource("13_ag7sh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.0136, -25.0845, 49.523)
+
+[node name="aimbutton" parent="." instance=ExtResource("14_pqebe")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -50.3953, -24.7013, 49.8574)
+
+[node name="aimbutton2" parent="." instance=ExtResource("14_pqebe")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -50.2542, -24.706, 50.0089)
+
+[node name="aimbutton3" parent="." instance=ExtResource("14_pqebe")]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, -50.2542, -24.7219, 49.698)
+
+[node name="bigredbutton" parent="." instance=ExtResource("15_wnxk7")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -50.3217, -24.71, 49.2405)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="bigredbutton"]
+transform = Transform3D(-0.816732, -0.63781, 1.45428, -0.150993, 1.65913, 0.642854, -1.5808, 0.171055, -0.812767, -3.1264, 4.25013, -2.57055)
+visible = false
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 10.374
+light_specular = 16.0
+shadow_enabled = true
+shadow_opacity = 0.16
+shadow_blur = 10.0
+distance_fade_begin = 0.0
+distance_fade_shadow = 0.0
+spot_range = 12.1333
+spot_angle = 33.9058
+
+[node name="button0" parent="." instance=ExtResource("16_1gbyu")]
+transform = Transform3D(0.748982, 0.039069, 0, -0.039069, 0.748982, 0, 0, 0, 0.75, -50.2561, -24.7344, 49.8465)
+
+[editable path="lukeforsubmarine"]
+[editable path="interer/lamp"]
+[editable path="interer/lamp/Interactable"]

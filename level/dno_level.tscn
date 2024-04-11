@@ -1,0 +1,188 @@
+[gd_scene load_steps=24 format=3 uid="uid://be060ywkofufu"]
+
+[ext_resource type="PackedScene" uid="uid://mkiwd6d0oa24" path="res://objects/FullSubmarine.tscn" id="1_na7oo"]
+[ext_resource type="PackedScene" uid="uid://c0rlc543u6ugo" path="res://scripts/player.tscn" id="2_qtjhf"]
+[ext_resource type="FontFile" uid="uid://cko63pqtm77m8" path="res://graphics/7x7-pixelized-regular1.ttf" id="2_spga4"]
+[ext_resource type="Script" path="res://scripts/MiniMapCam.gd" id="2_ua2yg"]
+[ext_resource type="PackedScene" uid="uid://0h5flf8mgr2g" path="res://objects/bigredbutton.tscn" id="2_vkmou"]
+[ext_resource type="Script" path="res://scripts/SubCamera.gd" id="2_w1brm"]
+[ext_resource type="Script" path="res://scripts/grad.gd" id="3_y1kkc"]
+[ext_resource type="PackedScene" uid="uid://ckntw7phu3djj" path="res://objects/button.tscn" id="4_xp71h"]
+[ext_resource type="PackedScene" uid="uid://c05u5dtnph56n" path="res://objects/aimbuttonright.tscn" id="4_yq67q"]
+[ext_resource type="Script" path="res://scripts/aimbuttonright.gd" id="5_mgdnl"]
+[ext_resource type="PackedScene" uid="uid://cwphkt5jmrvnr" path="res://objects/aimbuttonleft.tscn" id="6_wqv6d"]
+[ext_resource type="Script" path="res://scripts/aimbuttonleft.gd" id="7_h32d8"]
+[ext_resource type="PackedScene" uid="uid://cph3qmvc1n06t" path="res://objects/aimbutton.tscn" id="8_bjeps"]
+[ext_resource type="Script" path="res://scripts/aimbutton.gd" id="10_ctr17"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_hbyx3"]
+viewport_path = NodePath("interer/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0kaub"]
+viewport_path = NodePath("interer/MiniMapViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6247w"]
+shading_mode = 0
+albedo_color = Color(0.984314, 0, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_iboia"]
+material = SubResource("StandardMaterial3D_6247w")
+uv2_padding = 0.0
+text = "градусы сломались"
+font = ExtResource("2_spga4")
+font_size = 3
+
+[sub_resource type="Environment" id="Environment_ps7lh"]
+background_mode = 1
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gddp6"]
+viewport_path = NodePath("submarine/camera/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gt355"]
+size = Vector3(358.845, 1, 286.224)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tuhvk"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8uhjl"]
+material = SubResource("StandardMaterial3D_tuhvk")
+size = Vector3(358.845, 1, 286.224)
+
+[node name="Dno_level" type="Node"]
+
+[node name="submarine" parent="." instance=ExtResource("1_na7oo")]
+
+[node name="Camera3D" parent="submarine/interer/SubViewport" index="0"]
+visible = false
+
+[node name="Sprite3D" parent="submarine/interer/SubViewport/bigcomputar" index="1"]
+transform = Transform3D(-1.42062e-08, 0, 0.325, 0, 0.325, 0, -0.325, 0, -1.42062e-08, 12.2164, 48.9959, -20.8535)
+visible = false
+texture = SubResource("ViewportTexture_hbyx3")
+
+[node name="Sprite3D" parent="submarine/interer/smalcomputer" index="2"]
+texture = SubResource("ViewportTexture_0kaub")
+
+[node name="MiniMapCam" parent="submarine/interer/MiniMapViewport" index="0"]
+script = null
+
+[node name="lamp" parent="submarine/interer" index="9"]
+transform = Transform3D(0.947802, 0.0033644, 0.318841, -0.00565288, 0.999964, 0.00625239, -0.318809, -0.00772841, 0.947788, -50.6611, -85.9419, 51.0798)
+
+[node name="grad" type="MeshInstance3D" parent="submarine/interer/clocks" index="1"]
+transform = Transform3D(-0.526808, 0, 0.849985, 0, 0.999995, 0, -0.849985, 0, -0.526808, 0.0831909, 0.145706, -0.039381)
+mesh = SubResource("TextMesh_iboia")
+script = ExtResource("3_y1kkc")
+
+[node name="aimbutton" parent="submarine" index="5"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -50.3953, -24.7013, 37.8335)
+visible = false
+
+[node name="aimbutton2" parent="submarine" index="6"]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -50.2542, -24.706, 42.1442)
+visible = false
+
+[node name="aimbutton3" parent="submarine" index="7"]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, -50.2542, -24.7219, 41.5802)
+visible = false
+
+[node name="bigredbutton" parent="submarine" index="8"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -50.3217, -24.71, 40.7309)
+visible = false
+
+[node name="button0" parent="submarine" index="9"]
+transform = Transform3D(0.748982, 0.039069, 0, -0.039069, 0.748982, 0, 0, 0, 0.75, -50.2561, -24.7344, 42.1051)
+visible = false
+
+[node name="MiniMapViewport2" type="SubViewport" parent="submarine"]
+handle_input_locally = false
+size = Vector2i(79, 60)
+render_target_update_mode = 4
+
+[node name="MiniMapCam" type="Camera3D" parent="submarine/MiniMapViewport2"]
+transform = Transform3D(1.31134e-07, -1, -5.96046e-08, 0, -5.96046e-08, 1, -1, -1.31134e-07, -7.81619e-15, -40.3397, 57.4975, 13.7827)
+cull_mask = 524288
+environment = SubResource("Environment_ps7lh")
+projection = 1
+size = 12.0
+script = ExtResource("2_ua2yg")
+
+[node name="camera" type="Node3D" parent="submarine"]
+
+[node name="SubViewport" type="SubViewport" parent="submarine/camera"]
+size = Vector2i(640, 512)
+
+[node name="cameraman" type="Node3D" parent="submarine/camera/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.52053, 63.1179, 0)
+
+[node name="Camera3D2" type="Camera3D" parent="submarine/camera/SubViewport/cameraman"]
+transform = Transform3D(0.866025, 0.107368, -0.488336, 0, 0.976672, 0.214735, 0.5, -0.185966, 0.845823, 2, -57.326, -3)
+keep_aspect = 0
+cull_mask = 1
+fov = 52.1804
+script = ExtResource("2_w1brm")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="submarine/camera/SubViewport/cameraman/Camera3D2"]
+transform = Transform3D(0.997713, 0.00181301, -0.0675658, -0.000736653, 0.999872, 0.0159521, 0.0675861, -0.0158658, 0.997587, -0.173452, 0.684093, 0.999538)
+visible = false
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+spot_range = 10.3522
+spot_angle = 24.7499
+
+[node name="Sprite3D2" type="Sprite3D" parent="submarine/camera/SubViewport"]
+transform = Transform3D(-1.15835e-08, 0, 0.265, 0, 0.265, 0, -0.265, 0, -1.15835e-08, -44.5811, 16.5458, 14.7073)
+centered = false
+texture = SubResource("ViewportTexture_gddp6")
+
+[node name="bigredbutton" parent="submarine/camera" instance=ExtResource("2_vkmou")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -50.4052, -24.7078, 49.304)
+
+[node name="aimbuttonright" parent="submarine/camera" instance=ExtResource("4_yq67q")]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, -50.4017, -24.6903, 49.6745)
+script = ExtResource("5_mgdnl")
+
+[node name="aimbuttonleft" parent="submarine/camera" instance=ExtResource("6_wqv6d")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -50.397, -24.6903, 50.0382)
+script = ExtResource("7_h32d8")
+
+[node name="aimbutton" parent="submarine/camera" instance=ExtResource("8_bjeps")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -50.5746, -24.6903, 49.8533)
+script = ExtResource("10_ctr17")
+
+[node name="button0" parent="submarine/camera" instance=ExtResource("4_xp71h")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -50.4052, -24.7199, 49.8533)
+
+[node name="player" parent="." instance=ExtResource("2_qtjhf")]
+transform = Transform3D(-0.0581042, 0, 0.998311, 0, 1, 0, -0.998311, 0, -0.0581042, -42.0961, 15.5175, 14.0307)
+
+[node name="ground" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -61.1959, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.0717, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8085, 0, 46.2958)
+shape = SubResource("BoxShape3D_gt355")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ground/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8085, 0, 46.2958)
+mesh = SubResource("BoxMesh_8uhjl")
+
+[node name="env" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env"]
+transform = Transform3D(-0.866023, -0.464892, 0.184061, 0, 0.36812, 0.929778, -0.500003, 0.80521, -0.318801, 0, 0, 0)
+visible = false
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
+
+[editable path="submarine"]
+[editable path="submarine/lukeforsubmarine"]
+[editable path="submarine/interer/lamp"]
+[editable path="submarine/interer/lamp/Interactable"]

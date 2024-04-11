@@ -73,7 +73,7 @@ func _physics_process(delta):
 		crouch = true
 		walk = false
 		current_speed = crouch_speed
-		head.position.y = lerp(head.position.y , 1.8 + crouching_depth, delta * lerp_speed)
+		head.position.y = lerp(head.position.y, 1.8 + crouching_depth, delta * lerp_speed)
 	else:
 		head.position.y = lerp( head.position.y, 1.8, delta * lerp_speed)
 		current_speed = walk_speed
