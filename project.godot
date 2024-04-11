@@ -15,6 +15,7 @@ run/main_scene="res://level/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+<<<<<<< Updated upstream
 [dialogic]
 
 directories/dch_directory={}
@@ -22,6 +23,23 @@ directories/dtl_directory={
 "timeline": "res://timeline.dtl"
 }
 text/letter_speed=0.01
+=======
+<<<<<<< Updated upstream
+=======
+[autoload]
+
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+
+[dialogic]
+
+directories/dch_directory={
+"Watcher": "res://Dialogues/Watcher.dch"
+}
+directories/dtl_directory={
+"WatcherDialogue": "res://Dialogues/WatcherDialogue.dtl"
+}
+text/letter_speed=0.05
+>>>>>>> Stashed changes
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/autoadvance_per_character_delay=0.1
@@ -38,8 +56,13 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={}
+<<<<<<< Updated upstream
 layout/style_list=[]
 layout/default_style="res://character/stile.tres"
+=======
+layout/style_list=["res://Dialogues/WatcherDiagStyle.tres"]
+layout/default_style="res://Dialogues/WatcherDiagStyle.tres"
+>>>>>>> Stashed changes
 glossary/default_case_sensitive=true
 text/autocolor_names=true
 translation/enabled=true
@@ -49,12 +72,22 @@ translation/translation_folder=""
 translation/save_mode=0
 translation/add_separator=false
 extensions_folder="res://addons/dialogic_additions"
+<<<<<<< Updated upstream
 
+=======
+text/input_action="interact"
+
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 [display]
 
 window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/scale=2.5
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [input]
 
