@@ -735,10 +735,6 @@ transform = Transform3D(0.159852, 0, -0.16537, 0, 0.23, 0, 0.16537, 0, 0.159852,
 
 [node name="submarine" parent="." instance=ExtResource("9_f5gr0")]
 
-[node name="Skeleton3D" parent="submarine/lukeforsubmarine/skeletforluke" index="0"]
-bones/1/rotation = Quaternion(1.40631e-07, 2.97575e-10, 0.998834, 0.0482687)
-bones/2/rotation = Quaternion(-1.13268e-07, -1.78432e-08, -0.661993, 0.74951)
-
 [node name="Sprite3D" parent="submarine/interer/SubViewport/bigcomputar" index="1"]
 visible = false
 texture = SubResource("ViewportTexture_5bo28")
