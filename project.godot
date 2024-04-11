@@ -56,6 +56,10 @@ window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/scale=2.5
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
 [input]
 
 forward={
