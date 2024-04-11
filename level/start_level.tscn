@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://nibbxwyr476p"]
+[gd_scene load_steps=54 format=3 uid="uid://nibbxwyr476p"]
 
 [ext_resource type="PackedScene" uid="uid://c0rlc543u6ugo" path="res://scripts/player.tscn" id="1_4aoxd"]
 [ext_resource type="PackedScene" uid="uid://dynx8oxml1h2c" path="res://graphics/level/BIGWall.glb" id="2_ctlce"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://vfjsnoddcjdf" path="res://objects/bigredbuttonClick.tscn" id="12_5oywu"]
 [ext_resource type="PackedScene" uid="uid://c54gldiih8a1v" path="res://objects/whitelight.tscn" id="12_t8i3x"]
 [ext_resource type="PackedScene" uid="uid://cv53ekhfrwmgk" path="res://objects/aimbuttonClick.tscn" id="12_vfcye"]
+[ext_resource type="AudioStream" uid="uid://c5i7ankrepwc0" path="res://audio/windambientcutted.ogg" id="16_hecaf"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mnv40"]
 height = 0.001
@@ -1162,6 +1163,14 @@ spot_range = 34.8907
 spot_angle = 7.78318
 
 [node name="lamp2" type="Node3D" parent="."]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4266, 9.32148, 17.5131)
+stream = ExtResource("16_hecaf")
+unit_size = 7.3
+pitch_scale = 1.5
+autoplay = true
+max_distance = 60.0
 
 [editable path="ground/BIGWall"]
 [editable path="submarine"]

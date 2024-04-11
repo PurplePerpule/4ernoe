@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0rlc543u6ugo"]
+[gd_scene load_steps=7 format=3 uid="uid://c0rlc543u6ugo"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fqrvb"]
 [ext_resource type="PackedScene" uid="uid://cvgb6eu84xnqu" path="res://scenes/player_interactor.tscn" id="2_fj8y7"]
+[ext_resource type="AudioStream" uid="uid://cldtxrhh0gxdq" path="res://audio/shag.ogg" id="3_lwmb3"]
+[ext_resource type="AudioStream" uid="uid://cf7nda1rcjk86" path="res://audio/shagtwo.ogg" id="4_ankfi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vw0ya"]
 radius = 0.34273
@@ -63,5 +65,11 @@ offset_bottom = -1.5
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.635294)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_lwmb3")
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_ankfi")
 
 [editable path="head/eyes/Camera3D/PlayerInteractor"]
