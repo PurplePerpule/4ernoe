@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=5 format=3 uid="uid://nnk7sgr86c3t"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_7iqw6"]
+[ext_resource type="PackedScene" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="4_l2dj1"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="10_3uycv"]
+
+[sub_resource type="Resource" id="Resource_m57k4"]
+script = ExtResource("2_7iqw6")
+scene = ExtResource("4_l2dj1")
+overrides = {
+"box_size": "Vector2(490, 150)"
+}
+
+[resource]
+script = ExtResource("10_3uycv")
+name = "WatcherDiagStyle"
+base_overrides = {
+"canvas_layer": "2.0",
+"global_bg_color": "Color(0, 0, 0, 0.901961)"
+}
+layers = Array[ExtResource("2_7iqw6")]([SubResource("Resource_m57k4")])
+metadata/_latest_layer = -1
